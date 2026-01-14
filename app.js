@@ -1,15 +1,19 @@
 //tools
+require('dotenv').config();
 const express = require('express');
 const{body, validationResult} =  require('express-validator');
 const path = require('node:path');
 //routing
-const indexRouter = require ('./routes/indexRouter.js')
+const indexRouter = require ('./routes/indexRouter.js');
+const { main } = require('./db/populatedb.js');
 
 
 //server setup
 const app = express(()=>{
     console.log('booting server')
 });
+//seed base db
+
 
 //ejs setup 
 

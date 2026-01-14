@@ -7,7 +7,15 @@
     <title>Document</title>
 </head>
 <body>
-    <header>Empty project</header>
-    <section>content goes here!</section>
+    <header>Current users:</header>
+    <section>
+        <ul>
+            current users : -
+            <% users.map(user =>{ %>
+            <li><%= user.username %></li>    
+            <% }); %>
+        </ul>
+    </section>
+    <h3><a href="/new">create new user!</a></h3>
 </body>
 </html>

@@ -1,10 +1,12 @@
 //tools
 const {Router}= require('express');
 //controllers
-const {getHome} = require('../controllers/indexController.js')
+const {getUsernames, createUsernameGet, createUsernamePost} = require('../controllers/indexController.js')
 
 const indexRouter =Router();
 //get
-indexRouter.get('/',getHome)
+indexRouter.get('/',getUsernames);
+indexRouter.get('/new',createUsernameGet);
+indexRouter.post('/new',createUsernamePost);
 
 module.exports = indexRouter
