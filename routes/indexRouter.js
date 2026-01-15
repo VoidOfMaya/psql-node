@@ -13,4 +13,7 @@ indexRouter.post('/new', userController.createUsernamePost);
 //./?search
 indexRouter.get('/search', userController.searchUsername);
 
+//./delete
+indexRouter.get('/delete', userController.deleteUSersGet);
+
 module.exports = indexRouter

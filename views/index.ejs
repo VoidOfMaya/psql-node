@@ -11,9 +11,13 @@
     <section>
         <ul>
             current users : -
-            <% users.map(user =>{ %>
-            <li><%= user.username %></li>    
-            <% }); %>
+            <%if (users) {%>
+                <% users.map(user =>{ %>
+                <li><%= user.username %></li>    
+                <% }); %>
+            <% } else { %>
+                <li>currently empty!</li>
+            <% } %>
         </ul>
     </section>
     <h3><a href="/new">create new user!</a></h3>
@@ -32,5 +36,12 @@
             <li>no uses matching found</li>
         <% } %>
     </ul>
+    <form method="get" action="/delete">
+        <button style="background-color: red;" type="submit"
+                onclick="return confirm('this action will delete all users from the database are you sure you want to proceed?');">
+            Delete All Users!
+        </button>
+    </form>
+
 </body>
 </html>

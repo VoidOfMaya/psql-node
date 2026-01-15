@@ -47,4 +47,8 @@ exports.searchUsername = [validateGetInput , async(req, res) => {
     
     res.redirect(`/?search=${encodeURIComponent(username)}`);
 }]
+exports.deleteUSersGet = async (req, res) => {
+    await db.deleteAllUsers();
+    res.redirect('/')
+}
 

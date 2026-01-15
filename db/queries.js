@@ -16,9 +16,12 @@ async function searchForUser(searchValue){
   const {rows} = await pool.query(" SELECT username FROM usernames WHERE username LIKE $1", [`%${searchValue}%`]);
   return rows
 }
-
+async function deleteAllUsers (){
+  await pool.query('DELETE FROM usernames');
+}
 module.exports = {
   getAllUsernames,
   insertUsername,
-  searchForUser
+  searchForUser,
+  deleteAllUsers
 };
