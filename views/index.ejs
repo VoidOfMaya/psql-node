@@ -17,5 +17,20 @@
         </ul>
     </section>
     <h3><a href="/new">create new user!</a></h3>
+    <form method="get" action="/search">
+        <label for="username">Look for user: </label>
+        <input type="text" id="username" name="username" required>
+        <button type="submit">Search!</button>
+    </form>
+    <ul>
+        <h3>users Found: -</h3>
+        <% if(searchResult && searchResult.length > 0){ %>
+            <% searchResult.forEach(user=> { %>
+                <li><%= user.username %></li>
+            <% }) %>
+        <% }else{ %>
+            <li>no uses matching found</li>
+        <% } %>
+    </ul>
 </body>
 </html>

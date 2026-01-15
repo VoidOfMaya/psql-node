@@ -17,9 +17,9 @@ MVC folder structure that includes
     - errors
 
 ### assignment:-
-- add a search functionality via query params on index router example "GET /?search=sup
-    should return all usernames containing "sup"
-    prefor search in sql not js
+- add a search functionality via query params on index router example "GET /?search=sup ✅
+    - should return all usernames containing "sup" ✅
+    - preform search in sql not js ✅
 - add a new rout GET / delete to delete all usernames from db
 
 - in previous mini message Board project:

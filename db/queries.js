@@ -12,8 +12,13 @@ async function insertUsername(username) {
   //pg provides query parameterization to prevent SQL Injection attacks. Instead of passing user input directly,
   //  we pass it in an array as the second argument. pg handles the rest
 }
+async function searchForUser(searchValue){
+  const {rows} = await pool.query(" SELECT username FROM usernames WHERE username LIKE $1", [`%${searchValue}%`]);
+  return rows
+}
 
 module.exports = {
   getAllUsernames,
-  insertUsername
+  insertUsername,
+  searchForUser
 };
